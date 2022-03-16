@@ -79,7 +79,7 @@ async def on_message(message):
     if message.content.startswith("/인증"):
         r = message.guild.get_role(int(list_role))
         with open('member.txt', 'r', encoding='utf-8') as file:
-            cli = file.readlines()
+            cli = file.read()
             if message.author.name in cli:
                 mem = await message.guild.fetch_member(message.author.id)
                 if r not in mem.roles:
